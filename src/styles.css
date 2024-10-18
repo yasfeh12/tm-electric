@@ -1,0 +1,165 @@
+/* Base Styles */
+body {
+  background-color: #f8f9fa; /* Light background for contrast */
+  font-family: "Arial", sans-serif; /* Clean, professional font */
+}
+
+h1,
+h2 {
+  color: #0d6efd; /* Primary blue for headings */
+}
+
+p {
+  color: #6c757d; /* Neutral gray for body text */
+  line-height: 1.6; /* Enhance readability */
+}
+
+/* Carousel */
+.carousel-item img {
+  height: 600px; /* Reduced height for better focus */
+  object-fit: cover;
+  filter: grayscale(20%); /* Subtle grayscale effect */
+}
+
+.carousel-caption {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark transparent background */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.carousel-caption h2 {
+  color: white; /* Ensuring legibility */
+  font-weight: bold;
+}
+
+.carousel-caption p {
+  font-size: 1.5rem;
+}
+
+.btn-warning {
+  background-color: #f57c00;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.btn-warning:hover {
+  background-color: #e65100; /* Darker hover */
+}
+
+/* Sections */
+.my-5 {
+  margin: 3rem 0; /* Increase vertical space between sections */
+}
+
+.text-primary {
+  color: #0d6efd;
+}
+
+.text-muted {
+  color: #6c757d;
+}
+
+.lead {
+  font-size: 1.2rem; /* Slightly larger text for emphasis */
+}
+
+/* Cards & Review Section */
+.review-card,
+.project-card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.review-card:hover,
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Why Choose Us & Services */
+.service-card,
+.choose-us-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.8s ease both;
+}
+
+.service-card:hover,
+.choose-us-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-card:hover svg,
+.choose-us-card:hover h5 {
+  color: #f57c00;
+}
+
+/* Icon hover color change */
+.service-card svg {
+  color: #444;
+}
+
+/* Text hover color change */
+h5:hover {
+  color: #f57c00;
+}
+
+button:hover {
+  background-color: #f57c00;
+  color: white;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+/* Forms */
+.btn-outline-primary {
+  border-color: #0d6efd;
+  color: #0d6efd;
+}
+
+.btn-outline-primary:hover {
+  background-color: #0d6efd;
+  color: white;
+}
+
+/* Footer buttons (Contact Us) */
+.btn-outline-success {
+  border-color: #28a745;
+  color: #28a745;
+}
+
+.btn-outline-success:hover {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-outline-primary,
+.btn-outline-success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+}
+
+.btn-outline-primary svg,
+.btn-outline-success svg {
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 576px) {
+  .btn-outline-primary,
+  .btn-outline-success {
+    font-size: 1rem;
+  }
+}
+
+.contact-button:hover {
+  transform: scale(1.05); /* Slight grow on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+  color: white; /* Keep text white on hover */
+}
