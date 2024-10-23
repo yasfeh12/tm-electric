@@ -60,7 +60,7 @@ const PopularCities = () => {
       <Row className="justify-content-center">
         {cities.map((city, index) => (
           <Col xs={12} md={4} className="mb-4" key={index}>
-            <Card className="text-center h-100">
+            <Card className="text-center h-100 city-card">
               <Card.Img
                 variant="top"
                 src={city.image}
@@ -84,6 +84,26 @@ const PopularCities = () => {
 
       {/* Contact Modal */}
       <ContactModal show={showModal} handleClose={handleClose} />
+
+      {/* Inline Style for Hover Effect */}
+      <style>{`
+        .city-card {
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .city-card:hover {
+          transform: scale(1.12); /* Grow on hover by 20% */
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Larger shadow on hover */
+        }
+
+        /* Ensure hover effect works on touch devices */
+        @media (hover: none) {
+          .city-card:active {
+            transform: scale(1.12); /* Grow on tap for mobile */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+          }
+        }
+      `}</style>
     </Container>
   );
 };
