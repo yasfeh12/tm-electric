@@ -1,38 +1,42 @@
 /* Base Styles */
 body {
-  background-color: #f8f9fa; /* Light background for contrast */
-  font-family: "Arial", sans-serif; /* Clean, professional font */
+  background-color: #f8f9fa;
+  font-family: "Arial", sans-serif;
   margin: 0;
   padding: 0;
 }
 
 h1,
-h2 {
-  color: #0d6efd; /* Primary blue for headings */
+h2,
+h3,
+h4,
+h6 {
+  /* Apply same color to all heading tags */
+  color: #0d6efd; /* Consistent blue color for all titles */
   font-weight: bold;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 p {
-  color: #6c757d; /* Neutral gray for body text */
-  line-height: 1.6; /* Enhance readability */
+  color: #6c757d;
+  line-height: 1.6;
 }
 
 a {
-  text-decoration: none; /* Remove underline for links */
-  color: inherit; /* Keep the link color */
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Carousel */
 .carousel-item img {
-  height: 600px;
+  height: 600px; /* Adjusted in media queries */
   object-fit: cover;
   filter: grayscale(20%);
-  transition: filter 0.5s ease; /* Smooth transition on hover */
+  transition: filter 0.5s ease;
 }
 
 .carousel-item img:hover {
-  filter: grayscale(0); /* Remove grayscale on hover */
+  filter: grayscale(0);
 }
 
 .carousel-caption {
@@ -40,103 +44,49 @@ a {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 20px;
   border-radius: 10px;
+  text-align: center;
   animation: fadeIn 1s ease both;
 }
 
 .carousel-caption h2 {
+  font-size: 2.5rem; /* Adjusted in media queries */
   font-weight: bold;
-  font-size: 2.5rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .carousel-caption p {
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* Adjusted in media queries */
 }
 
-/* Button Styles */
+/* Global Button Styles */
+.btn {
+  font-size: 1.3rem; /* Consistent font size */
+  padding: 12px 25px; /* Consistent padding */
+  border-radius: 8px;
+  border-width: 2px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Consistent shadow */
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.btn:hover {
+  transform: scale(1.1); /* Grow slightly on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+  color: white; /* Ensure text turns white on hover */
+}
+
+/* Button Specific Styles */
 .btn-warning {
   background-color: #f57c00;
-  color: white;
-  font-size: 1.2rem;
-  padding: 10px 20px;
-  border-radius: 50px;
-  transition: background-color 0.3s, transform 0.3s;
+  border-color: #e65100;
 }
 
 .btn-warning:hover {
   background-color: #e65100;
-  transform: scale(1.05);
 }
 
-button:hover {
-  background-color: #f57c00;
-  color: white;
-  transform: scale(1.05);
-  transition: all 0.3s ease;
-}
-
-/* Sections */
-.my-5 {
-  margin: 3rem 0;
-}
-
-.text-primary {
-  color: #0d6efd;
-}
-
-.text-muted {
-  color: #6c757d;
-}
-
-.lead {
-  font-size: 1.2rem;
-}
-
-/* Cards & Review Section */
-.review-card,
-.project-card {
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.review-card:hover,
-.project-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Why Choose Us & Services */
-.service-card,
-.choose-us-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: fadeInUp 0.8s ease both;
-}
-
-.service-card:hover,
-.choose-us-card:hover {
-  transform: scale(1.1);
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.service-card:hover svg,
-.choose-us-card:hover h5 {
-  color: #f57c00;
-}
-
-/* Icon hover color change */
-.service-card svg {
-  color: #444;
-}
-
-/* Text hover color change */
-h5:hover {
-  color: #f57c00;
-}
-
-/* Forms */
 .btn-outline-primary {
+  background-color: transparent;
   border-color: #0d6efd;
   color: #0d6efd;
 }
@@ -146,8 +96,8 @@ h5:hover {
   color: white;
 }
 
-/* Footer buttons (Contact Us) */
 .btn-outline-success {
+  background-color: transparent;
   border-color: #28a745;
   color: #28a745;
 }
@@ -159,13 +109,69 @@ h5:hover {
 
 /* Contact Button */
 .contact-button {
+  background-color: #0d6efd;
+  color: white;
+  border-radius: 8px;
+}
+
+.contact-button:hover {
+  background-color: #004080;
+}
+
+/* Icon Buttons */
+.btn img {
+  width: 30px; /* Icon size */
+  margin-right: 10px; /* Space between icon and text */
+}
+
+/* Cards & Hover Effects */
+.review-card,
+.project-card,
+.service-card,
+.choose-us-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  animation: fadeInUp 0.8s ease both; /* Common to all cards */
+}
+
+.review-card:hover,
+.project-card:hover,
+.service-card:hover,
+.choose-us-card:hover {
+  transform: scale(1.1); /* Hover effect */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-card:hover svg,
+.choose-us-card:hover h5 {
+  color: #f57c00;
+}
+
+.service-card svg {
+  color: #444;
+}
+
+h5:hover {
+  color: #f57c00;
+}
+
+/* Forms */
+.btn-outline-primary,
+.btn-outline-success {
+  border-width: 2px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Contact Button Hover */
+.contact-button {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .contact-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
 }
 
 /* Keyframes for Animations */
@@ -182,13 +188,13 @@ h5:hover {
 
 /* Media Queries */
 @media (max-width: 576px) {
-  .btn-outline-primary,
-  .btn-outline-success {
-    font-size: 1rem;
+  .btn {
+    font-size: 1.1rem; /* Adjusted button size for small screens */
+    padding: 10px 20px;
   }
 
   .carousel-item img {
-    height: 400px;
+    height: 400px; /* Adjusted image height */
   }
 
   .carousel-caption h2 {
@@ -198,21 +204,48 @@ h5:hover {
   .btn-warning {
     font-size: 1rem;
   }
+
+  h1,
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .carousel-caption p,
+  .lead {
+    font-size: 1rem;
+  }
+
+  .choose-us-card h5 {
+    font-size: 1.1rem;
+  }
+
+  .choose-us-card p {
+    font-size: 0.9rem;
+  }
+
+  .carousel-item img {
+    height: 300px;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
   .btn-warning {
-    font-size: 1.1rem;
+    font-size: 1.1rem; /* Specific adjustment */
   }
 
   .carousel-item img {
-    height: 500px;
+    height: 500px; /* Adjusted image height */
   }
 }
 
 @media (min-width: 768px) {
   .btn-warning {
-    font-size: 1.2rem;
+    font-size: 1.2rem; /* Specific adjustment */
   }
 }
 
@@ -222,7 +255,7 @@ h5:hover {
 }
 
 .shadow-lg {
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15); /* Test if needed everywhere */
 }
 
 /* Transitions */
@@ -231,103 +264,8 @@ h5 {
   transition: color 0.3s ease;
 }
 
-/* Responsive typography adjustments for mobile */
-@media (max-width: 576px) {
-  h1,
-  h2 {
-    font-size: 1.5rem; /* Reduce heading size for small screens */
-  }
-
-  .carousel-caption h2 {
-    font-size: 1.2rem; /* Smaller size for carousel caption on mobile */
-  }
-
-  .carousel-caption p {
-    font-size: 1rem; /* Adjust paragraph text size */
-  }
-
-  .lead {
-    font-size: 1rem; /* Smaller lead text for better readability */
-  }
-
-  .btn-warning {
-    font-size: 0.9rem; /* Adjust button size */
-    padding: 8px 15px; /* Reduce padding for better fit */
-  }
-
-  /* Specific adjustments for the "Why Choose Us" section */
-  .choose-us-card h5 {
-    font-size: 1.1rem; /* Reduce heading size in cards */
-  }
-
-  .choose-us-card p {
-    font-size: 0.9rem; /* Reduce paragraph size in cards */
-  }
-
-  .carousel-item img {
-    height: 300px; /* Reduce image height for mobile */
-  }
-
-  /* Adjustments for the "Get a Quote" button */
-  .btn {
-    font-size: 0.9rem; /* Smaller button text */
-    padding: 10px 20px;
-  }
-}
-
-/* Carousel Captions */
-.carousel-caption {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-/* Responsive Font Sizes for Carousel Captions */
-.carousel-caption h2 {
-  font-size: 2rem; /* Default size for larger screens */
-  font-weight: bold;
-  color: #ffffff; /* White text for better visibility */
-}
-
-.carousel-caption p {
-  font-size: 1.2rem; /* Default size for larger screens */
-  color: #ffffff;
-}
-
-@media (max-width: 768px) {
-  /* For tablets and smaller devices */
-  .carousel-caption h2 {
-    font-size: 1.5rem; /* Reduce heading size */
-  }
-
-  .carousel-caption p {
-    font-size: 1rem; /* Reduce paragraph size */
-  }
-}
-
-@media (max-width: 576px) {
-  /* For mobile phones */
-  .carousel-caption h2 {
-    font-size: 1.2rem; /* Further reduce heading size */
-  }
-
-  .carousel-caption p {
-    font-size: 0.9rem; /* Further reduce paragraph size */
-  }
-}
-
-.carousel-item img {
-  height: auto; /* Ensure images resize automatically */
-  object-fit: cover;
-  width: 100%; /* Ensure full-width on mobile */
-}
-
+/* Carousel Control */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  filter: invert(100%); /* Ensure arrows are visible on darker images */
+  filter: invert(100%);
 }

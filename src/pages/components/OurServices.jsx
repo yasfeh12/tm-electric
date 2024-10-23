@@ -55,7 +55,6 @@ function OurServices() {
 
   return (
     <Container className="my-5">
-      {/* Main Heading */}
       <h2 className="text-center mb-4">Our Services</h2>
       <Row>
         {services.map((service, index) => (
@@ -65,16 +64,19 @@ function OurServices() {
               style={{
                 border: "2px solid #f57c00",
                 borderRadius: "50%",
-                width: "150px", // Increased circle size
-                height: "150px", // Increased circle size
+                width: "150px",
+                height: "150px",
                 margin: "0 auto",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                fontSize: "3rem", // Increased icon size
-                animationDelay: `${index * 0.1}s`, // Delay animation for each item
+                fontSize: "3rem",
+                animationDelay: `${index * 0.1}s`,
+                animationName: "fadeInUp",
+                animationDuration: "0.8s",
+                animationFillMode: "both",
               }}
-              aria-label={service.title} // Added aria-label for accessibility
+              aria-label={service.title}
             >
               {service.icon}
             </div>

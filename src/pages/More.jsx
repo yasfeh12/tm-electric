@@ -19,7 +19,8 @@ function More() {
       </Helmet>
 
       <div>
-        <h1>Welcome to Our More</h1>
+        <h1 style={{ color: "#0d6efd" }}>Welcome to Our More</h1>{" "}
+        {/* Title color corrected */}
         <p>
           This is the main page where you can learn more about our future plans
           for our electrical services.

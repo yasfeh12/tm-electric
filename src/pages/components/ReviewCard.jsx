@@ -101,14 +101,6 @@ const Reviews = () => {
 
   return (
     <Container className="my-5">
-      {/* Main Heading for SEO */}
-      <h2
-        className="text-center mb-4"
-        style={{ fontSize: "2.5rem", fontWeight: "700" }}
-      >
-        Google Reviews
-      </h2>
-
       {/* Carousel with reviews */}
       <Carousel interval={null}>
         {reviews.map((review, index) => (

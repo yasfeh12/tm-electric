@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Helmet } from "react-helmet"; // Import Helmet for SEO
+import { Helmet } from "react-helmet";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import QuoteSheet from "./components/QuoteSheet";
@@ -18,7 +18,6 @@ function Home() {
 
   return (
     <div className="text-center my-5">
-      {/* SEO Meta Tags */}
       <Helmet>
         <title>Electrician Services - Home</title>
         <meta
