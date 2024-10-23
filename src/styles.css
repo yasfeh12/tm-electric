@@ -269,3 +269,39 @@ h5 {
 .carousel-control-next-icon {
   filter: invert(100%);
 }
+
+/* Cards & Hover Effects */
+.review-card,
+.project-card,
+.service-card,
+.choose-us-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  animation: fadeInUp 0.8s ease both;
+}
+
+.review-card:hover,
+.project-card:hover,
+.service-card:hover,
+.choose-us-card:hover {
+  transform: scale(1.2); /* Hover effect: 20% size increase */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Larger shadow on hover */
+}
+
+/* Ensure hover effect works on touch devices */
+@media (hover: none) {
+  .project-card:active,
+  .service-card:active,
+  .review-card:active,
+  .choose-us-card:active {
+    transform: scale(1.2); /* 20% size increase on tap for mobile */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.project-card:hover {
+  transform: scale(1.2) !important; /* Force the hover effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3) !important;
+}

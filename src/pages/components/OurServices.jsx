@@ -75,6 +75,7 @@ function OurServices() {
                 animationName: "fadeInUp",
                 animationDuration: "0.8s",
                 animationFillMode: "both",
+                transition: "transform 0.3s ease", // Hover effect
               }}
               aria-label={service.title}
             >
@@ -86,6 +87,20 @@ function OurServices() {
           </Col>
         ))}
       </Row>
+
+      {/* Hover Effect for Mobile/Tablet */}
+      <style jsx>{`
+        .service-card:hover {
+          transform: scale(1.1); /* Grow on hover */
+        }
+
+        /* Ensure hover effect works on touch devices */
+        @media (hover: none) {
+          .service-card:active {
+            transform: scale(1.1); /* Grow on tap for mobile */
+          }
+        }
+      `}</style>
     </Container>
   );
 }

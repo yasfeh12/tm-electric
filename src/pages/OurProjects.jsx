@@ -108,14 +108,15 @@ function OurProjects() {
                   border: "1px solid #ddd",
                   borderRadius: "10px",
                   backgroundColor: "#f9f9f9",
-                  transition: "transform 0.3s ease",
+                  transition: "transform 0.3s ease, box-shadow 0.3s ease",
                   padding: "15px",
+                  animation: `fadeInUp 0.8s ease ${index * 0.1}s both`,
                 }}
               >
                 <Card.Img
                   variant="top"
                   src={project.imageUrl}
-                  alt={project.title} // Add alt attribute for image SEO
+                  alt={project.title}
                   style={{
                     borderRadius: "10px",
                     height: "200px",
@@ -152,47 +153,27 @@ function OurProjects() {
 
       <OurServices />
 
-      {/* Contact Us Section */}
-      <div className="d-flex justify-content-center mt-4">
-        <div className="mx-3">
-          <a
-            href="mailto:example@example.com"
-            className="btn btn-outline-primary"
-          >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/561/561127.png"
-              alt="Email"
-              style={{ width: "30px", marginRight: "10px" }}
-            />
-            Email
-          </a>
-        </div>
-        <div className="mx-3">
-          <a href="tel:+123456789" className="btn btn-outline-success">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/724/724664.png"
-              alt="Phone"
-              style={{ width: "30px", marginRight: "10px" }}
-            />
-            Phone
-          </a>
-        </div>
-        <div className="mx-3">
-          <a
-            href="https://wa.me/123456789"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-outline-success"
-          >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
-              alt="WhatsApp"
-              style={{ width: "30px", marginRight: "10px" }}
-            />
-            WhatsApp
-          </a>
-        </div>
-      </div>
+      {/* Hover Effect for Projects */}
+      <style>{`
+        .project-card:hover {
+          transform: scale(1.2); /* Grow on hover by 20% */
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Larger shadow on hover */
+        }
+
+        .service-card:hover {
+          transform: scale(1.2); /* Grow on hover by 20% */
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Larger shadow on hover */
+        }
+
+        /* Ensure hover effect works on touch devices */
+        @media (hover: none) {
+          .project-card:active,
+          .service-card:active {
+            transform: scale(1.2); /* Grow on tap for mobile */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+          }
+        }
+      `}</style>
     </>
   );
 }
