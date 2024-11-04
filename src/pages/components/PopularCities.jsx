@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Card, Button, Container, Row, Col } from "react-bootstrap";
-import ContactModal from "./ContactModal"; // Import the modal
+import ContactModal from "./ContactModal";
 
 const PopularCities = () => {
   const [showModal, setShowModal] = useState(false);

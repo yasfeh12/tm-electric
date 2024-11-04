@@ -24,6 +24,7 @@ function LedLightingSection() {
           <Button
             variant="dark"
             className="mt-3"
+            href="tel:+1234567890" // Replace with your phone number
             style={{ fontSize: "1.2rem" }}
             aria-label="Call now to inquire about LED lighting and down light installation"
           >
